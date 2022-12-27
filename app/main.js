@@ -12,6 +12,7 @@ async function getBuscarLivrosDaAPI() {
 }
 
 function exibirOslivrosNatela(listaDeLivros) {
+  elementoParaInserirLivros.innerHTML = '';
   listaDeLivros.forEach(livro => {
     elementoParaInserirLivros.innerHTML += `
     <div class="livro">
