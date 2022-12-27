@@ -4,6 +4,9 @@ const endPointdaAPI =
 
 getBuscarLivrosDaAPI();
 const elementoParaInserirLivros = document.getElementById('livros');
+const elementoComValorTotalDeLivrosDisponiveis = document.getElementById(
+  'valor_total_livros_disponiveis'
+);
 async function getBuscarLivrosDaAPI() {
   const res = await fetch(endPointdaAPI);
   livros = await res.json();
@@ -12,6 +15,7 @@ async function getBuscarLivrosDaAPI() {
 }
 
 function exibirOslivrosNatela(listaDeLivros) {
+  elementoComValorTotalDeLivrosDisponiveis.innerHTML = '';
   elementoParaInserirLivros.innerHTML = '';
   listaDeLivros.forEach(livro => {
     let livroDisponivel =
